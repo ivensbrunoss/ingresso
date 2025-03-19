@@ -5,12 +5,16 @@ function comprar() {
     //recuperar quantidade de ingresso da compra
     let quantidade = parseInt(document.getElementById('qtd').value);
 
-    if (tipoIngresso == 'pista') {
-        comprarPista(quantidade);
-    } else if (tipoIngresso == 'superior') {
-        comprarSuperior(quantidade);
+    if (quantidade < 0) {
+        alert("Número inválido no campo quantidade")
     } else {
-        comprarInferior(quantidade);
+        if (tipoIngresso == 'pista') {
+            comprarPista(quantidade);
+        } else if (tipoIngresso == 'superior') {
+            comprarSuperior(quantidade);
+        } else {
+            comprarInferior(quantidade);
+        }
     }
 }
 
